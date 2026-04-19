@@ -51,10 +51,10 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [Chatbot em Streamlit] |
-| LLM | [Gemini 1.5 Flash] |
-| Base de Conhecimento | [Arquivos JSON de Perfil e Produtos] |
-| Validação | [Filtro de saída para garantir que apenas produtos do catálogo sejam citados] |
+| Interface | Chatbot em Streamlit |
+| LLM | Gemini 1.5 Flash |
+| Base de Conhecimento | Arquivos JSON de Perfil e Produtos |
+| Validação | Filtro de saída para garantir que apenas produtos do catálogo sejam citados |
 
 ---
 
