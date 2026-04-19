@@ -61,9 +61,9 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [X] [O agente é instruído a responder perguntas exclusivamente com base nos dados fornecidos nos arquivos de contexto.]
-- [X] [A IA verifica o campo aceita_risco no arquivo de perfil antes de sugerir qualquer produto de renda variável.]
-- [X] [Se a informação não estiver na base (ex: cotação de criptomoedas em tempo real), o agente deve admitir que não possui o dado em vez de inventar.]
+- [X] O agente é instruído a responder perguntas exclusivamente com base nos dados fornecidos nos arquivos de contexto.
+- [X] A IA verifica o campo aceita_risco no arquivo de perfil antes de sugerir qualquer produto de renda variável.
+- [X] Se a informação não estiver na base (ex: cotação de criptomoedas em tempo real), o agente deve admitir que não possui o dado em vez de inventar.
 
 ### Limitações Declaradas
 
