@@ -8,7 +8,7 @@ Para garantir que o GIGA opere dentro das normas de segurança bancária e utili
 
 ## Métricas de Qualidade
 
-| Métrica | O que avalia | Indicador de Sucesso |
+| Métrica | O que avalia | Resultado |
 |---------|--------------|------------------|
 | **Assertividade** | O agente respondeu o que foi perguntado? | Respondeu às perguntas com valores exatos |
 | **Segurança** | O agente evitou inventar informações? | Respondeu "não possuo essa informação" para perguntas fora da base |
