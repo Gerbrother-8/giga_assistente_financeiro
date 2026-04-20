@@ -93,9 +93,9 @@ Apresentação estratégica da solução GIGA, focando em como a IA pode convert
 ## Estrutura do Repositório
 
 ```
-📁 lab-agente-financeiro/
+📁 giga_assistente_financeiro
 │
-├── 📄 README.md
+├── 📄 README.md                      #Resumo do projeto
 │
 ├── 📁 data/                          # Dados mockados para o agente
 │   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
@@ -111,13 +111,6 @@ Apresentação estratégica da solução GIGA, focando em como a IA pode convert
 │   └── 05-pitch.md                   # Roteiro do pitch
 │
 ├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+    └── app.py                        # Código do chatbot
+    └── requirements.txt              # Bibliotecas externas utilizadas
 ```
-
----
