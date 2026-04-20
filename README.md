@@ -1,110 +1,92 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💰 GIGA - Gestor Inteligente de Gastos e Ativos
 
 ## Contexto
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+O **GIGA** é um assistente financeiro inteligente desenvolvido como projeto final do Bootcamp Bradesco - GenAI & Dados. Ele transforma a experiência bancária de simples consultas em uma jornada consultiva e proativa. Focado na simplicidade e agilidade, o GIGA utiliza IA Generativa para:
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+- **Analisar transações:** identifica padrões no fluxo de caixa.
+- **Personalizar investimentos:** Sugere produtos baseados no perfil do usuário.
+- **Segurança Normativa:** Opera sob regras rígidas que distinguem sugestões informativas de recomendações profissionais.
+- **Confiabilidade:** As respostas passam por filtros de verificação de veracidade.
 
 ---
 
-## O Que Você Deve Entregar
+## Estrutura do Projeto
 
 ### 1. Documentação do Agente
 
-Defina **o que** seu agente faz e **como** ele funciona:
+O GIGA resolve o problema da fragmentação de informações financeiras, unindo a visão de gastos com a oportunidade de investimento. Sua persona é consultiva, educativa e encorajadora.
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+- **Arquitetura:** Baseada em um orquestrador de IA que consome arquivos estruturados e valida as respostas através de filtros de verificação de veracidade.
+- **Segurança:** Implementação de travas de contexto para garantir que o agente não alucine transações ou dados externos.
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+📄 [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
 
 ---
 
 ### 2. Base de Conhecimento
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+O agente é alimentado por quatro pilares de dados mockados que garantem a precisão das análises:
 
 | Arquivo | Formato | Descrição |
 |---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+| `transacoes.csv` | CSV | Histórico detalhado de entradas e saídas. |
+| `historico_atendimento.csv` | CSV | Fornece contexto sobre dúvidas anteriores e padrões de suporte. |
+| `perfil_investidor.json` | JSON | Define o perfil de risco, metas e limites do cliente. |
+| `produtos_financeiros.json` | JSON | Catálogo oficial de produtos de investimento. |
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+📄 [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
 
 ---
 
 ### 3. Prompts do Agente
 
-Documente os prompts que definem o comportamento do seu agente:
+A inteligência do GIGA é moldada por prompts estruturados que utilizam técnicas de *Few-Shot Prompting*:
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+- **System Prompt:** Define a proibição do termo "recomendar" e a obrigatoriedade da checagem do campo `aceita_risco`.
+- **Edge Cases:** Protocolos para lidar com perguntas fora de escopo e tentativas de acesso a dados sensíveis.
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+📄 [`docs/03-prompts.md`](./docs/03-prompts.md)
 
 ---
 
 ### 4. Aplicação Funcional
 
-Desenvolva um **protótipo funcional** do seu agente:
+O protótipo desenvolvido em Python, processa de dados via Pandas, utiliza a interface do Streamlit e a capacidade de linguagem natural do modelo Gemini 2.5 Flash.
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
+- **Interface:** Streamlit para uma interação rápida e limpa.
+- **Integração:** Conexão direta com as APIs do Gemini.
 
-📁 **Pasta:** [`src/`](./src/)
+📄 [`src/app.py`](./src/app.py)
 
 ---
 
 ### 5. Avaliação e Métricas
 
-Descreva como você avalia a qualidade do seu agente:
+O GIGA foi testado e aprovado por meio de testes de estresse de prompt (red teaming) e validação de consistência de dados:
+- **Métricas:** Precisão na extração, cálculo e apresentação de valores.
+- **Testes:** Validação de dados e proteção contra tentativas de mau uso do assistente.
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+📄 [`docs/04-metricas.md`](./docs/04-metricas.md)
 
 ---
 
 ### 6. Pitch
 
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
+Apresentação estratégica da solução GIGA, focando em como a IA pode converter dados em saúde financeira para os clientes.
 
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+📄 [`docs/05-pitch.md`](./docs/05-pitch.md)
 
 ---
 
-## Ferramentas Sugeridas
+## Ferramentas Utilizadas
 
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
+| Categoria | Ferramenta |
 |-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+| **Linguagem** | Python 3.x |
+| **Processamento de dados** | Pandas |
+| **LLM** | Gemini 2.5 Flash |
+| **Interface** | Streamlit |
 
 ---
 
@@ -139,11 +121,3 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 ```
 
 ---
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
