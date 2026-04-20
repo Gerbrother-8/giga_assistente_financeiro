@@ -29,5 +29,3 @@ O GIGA tem dois diferenciais claros: o primeiro é sua camada rígida de seguran
 ## Link do Vídeo
 
 🎥 [GIGA - Gestor Inteligente de Ativos](https://youtu.be/EyyeDBoqDpw)
-
-[Link do vídeo aqui]
